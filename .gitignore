@@ -1,0 +1,6 @@
+libasm.a
+*.o
+*/*.o
+a.out
+*/a.out
+*/hello
