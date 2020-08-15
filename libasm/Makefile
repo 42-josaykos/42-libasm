@@ -6,7 +6,7 @@
 #    By: jonny <josaykos@student.42.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/12 13:27:00 by jonny             #+#    #+#              #
-#    Updated: 2020/08/15 15:09:47 by jonny            ###   ########.fr        #
+#    Updated: 2020/08/15 16:12:21 by jonny            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,9 @@ LIB = -L. -lasm
 # Linux
 ifeq ($(OS), Linux)
 NAME = libasm.a
-SRCS = ft_write.s
+SRCS = ft_write.s \
+			 ft_read.s \
+
 SRCS_PATH = src
 SRC = $(addprefix $(SRCS_PATH)/,$(SRCS))
 OBJS = $(SRC:.s=.o)
