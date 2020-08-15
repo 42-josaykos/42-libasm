@@ -6,7 +6,7 @@
 #    By: jonny <josaykos@student.42.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/12 13:27:00 by jonny             #+#    #+#              #
-#    Updated: 2020/08/15 15:06:23 by jonny            ###   ########.fr        #
+#    Updated: 2020/08/15 15:09:47 by jonny            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@
 # Colors
 RED =`tput setaf 1`
 GREEN =`tput setaf 2`
-GREEN =`tput sgr0`
+CLEAR =`tput sgr0`
 
 # OS
 OS := $(shell uname)
