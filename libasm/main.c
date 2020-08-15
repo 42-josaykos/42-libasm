@@ -6,17 +6,17 @@
 /*   By: jonny <josaykos@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 14:46:13 by jonny             #+#    #+#             */
-/*   Updated: 2020/08/12 15:09:58 by jonny            ###   ########.fr       */
+/*   Updated: 2020/08/15 14:58:48 by jonny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <sys/types.h>
+#include <stdio.h>
 
-void hello(void);
+ssize_t ft_write(int fd, const void *buf, size_t count);
 
 int main(void)
 {
-	hello();
-	return 0;
+	ft_write(1, "Hello\n", 6);
+	return (0);
 }

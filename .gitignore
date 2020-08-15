@@ -3,4 +3,5 @@ libasm.a
 */*.o
 a.out
 */a.out
+test
 */hello
