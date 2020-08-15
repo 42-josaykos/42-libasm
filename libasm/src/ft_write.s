@@ -1,3 +1,5 @@
+; vi:syntax=nasm
+
 section .data
 		text db "Hello, World!",10
 
