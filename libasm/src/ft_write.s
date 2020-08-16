@@ -1,9 +1,8 @@
 ; vi:syntax=nasm
 
-section .text
-		global ft_write
+			global		ft_write
 
-ft_write:
-		mov rax, 1
-		syscall
-		ret
+			section		.text
+ft_write:	mov rax,	1
+			syscall
+			ret
