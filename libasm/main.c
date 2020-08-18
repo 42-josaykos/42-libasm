@@ -6,18 +6,11 @@
 /*   By: jonny <josaykos@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 14:46:13 by jonny             #+#    #+#             */
-/*   Updated: 2020/08/18 15:54:03 by jonny            ###   ########.fr       */
+/*   Updated: 2020/08/18 16:00:29 by jonny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <errno.h>
-
-ssize_t ft_write(int fd, const void *buf, size_t count);
-ssize_t ft_read(int fd, void *buf, size_t count);
+#include "libasm.h"
 
 int main(void)
 {
