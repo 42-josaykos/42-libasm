@@ -6,7 +6,7 @@
 #    By: jonny <josaykos@student.42.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/12 13:27:00 by jonny             #+#    #+#              #
-#    Updated: 2020/08/15 17:24:08 by jonny            ###   ########.fr        #
+#    Updated: 2020/08/18 15:35:23 by jonny            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ ifeq ($(OS), Linux)
 NAME = libasm.a
 SRCS = ft_write.s \
 			 ft_read.s \
+			 ft_error.s \
 
 SRCS_PATH = src
 SRC = $(addprefix $(SRCS_PATH)/,$(SRCS))
@@ -56,7 +57,7 @@ $(NAME): $(OBJS)
 	nasm $(FLAGS) $< -o $@
 
 test: $(NAME) $(MAIN_O)
-	$(CC) $(CFLAGS) $(DEBUG) $(MAIN_O) $(LIB) -o $(TEST)
+	$(CC) -no-pie $(CFLAGS) $(MAIN_O) $(LIB) -o $(TEST)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
