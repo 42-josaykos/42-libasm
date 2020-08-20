@@ -6,7 +6,7 @@
 #    By: jonny <josaykos@student.42.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/12 13:27:00 by jonny             #+#    #+#              #
-#    Updated: 2020/08/18 15:35:23 by jonny            ###   ########.fr        #
+#    Updated: 2020/08/20 13:13:50 by jonny            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ NAME = libasm.a
 SRCS = ft_write.s \
 			 ft_read.s \
 			 ft_error.s \
+			 ft_strlen.s \
 
 SRCS_PATH = src
 SRC = $(addprefix $(SRCS_PATH)/,$(SRCS))

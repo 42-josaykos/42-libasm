@@ -6,7 +6,7 @@
 /*   By: jonny <josaykos@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 14:46:13 by jonny             #+#    #+#             */
-/*   Updated: 2020/08/18 16:00:29 by jonny            ###   ########.fr       */
+/*   Updated: 2020/08/20 14:37:58 by jonny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int main(void)
 	int ret;
 	char buf[20];
 	char *buf_alloc;
+	char *str = "";
 	int fd;
 
 	puts("\n----------- ft_write -----------");
@@ -110,6 +111,30 @@ int main(void)
 	ret = read(fd, buf_alloc, 40);
 	close(fd);
 	write(1, buf_alloc, 40);
+	printf(" | ret = %d", ret);
+	printf(" | errno = %d\n", errno);
+
+	puts("\n----------- ft_strlen -----------");
+
+	// ft_strlen test 1
+	write(1, "\033[1;32mMINE : \033[0m", 18);
+	ret = ft_strlen("Hello");
+	printf(" | ret = %d", ret);
+	printf(" | errno = %d\n", errno);
+
+	write(1, "\033[1;31mREAL : \033[0m", 18);
+	ret = strlen("Hello");
+	printf(" | ret = %d", ret);
+	printf(" | errno = %d\n", errno);
+
+	// ft_strlen test 2
+	write(1, "\033[1;32mMINE : \033[0m", 18);
+	ret = ft_strlen(str);
+	printf(" | ret = %d", ret);
+	printf(" | errno = %d\n", errno);
+
+	write(1, "\033[1;31mREAL : \033[0m", 18);
+	ret = strlen(str);
 	printf(" | ret = %d", ret);
 	printf(" | errno = %d\n", errno);
 

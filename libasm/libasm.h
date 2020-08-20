@@ -6,7 +6,7 @@
 /*   By: jonny <josaykos@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/18 15:59:22 by jonny             #+#    #+#             */
-/*   Updated: 2020/08/18 16:00:13 by jonny            ###   ########.fr       */
+/*   Updated: 2020/08/20 13:16:08 by jonny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <string.h>
 # include <fcntl.h>
 # include <errno.h>
 
