@@ -6,7 +6,7 @@
 #    By: jonny <josaykos@student.42.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/12 13:27:00 by jonny             #+#    #+#              #
-#    Updated: 2020/08/20 13:13:50 by jonny            ###   ########.fr        #
+#    Updated: 2020/08/20 15:20:22 by jonny            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,21 +53,24 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
+	@echo "$(GREEN)$(NAME) compiled with success$(CLEAR)"
 
 %.o: %.s
 	nasm $(FLAGS) $< -o $@
 
 test: $(NAME) $(MAIN_O)
 	$(CC) -no-pie $(CFLAGS) $(MAIN_O) $(LIB) -o $(TEST)
+	@echo "$(GREEN)$(TEST) compiled with success$(CLEAR)"
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS) $(MAIN_O)
+	@echo "$(RED)removed object files$(CLEAR)"
 
 fclean: clean
 	rm -rf $(NAME) $(TEST)
+	@echo "$(RED)removed libasm and test$(CLEAR)"
 
 re: fclean all
-
