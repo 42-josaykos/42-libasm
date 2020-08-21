@@ -6,7 +6,7 @@
 /*   By: jonny <josaykos@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 14:46:13 by jonny             #+#    #+#             */
-/*   Updated: 2020/08/21 12:54:25 by jonny            ###   ########.fr       */
+/*   Updated: 2020/08/21 14:40:54 by jonny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(void)
 	char buf[20];
 	char *buf_alloc;
 	char *str = "";
-	char str1[6];
+	char str1[20];
 	char *str2 = "Salut";
 	int fd;
 
@@ -37,23 +37,23 @@ int main(void)
 
 	// ft_write test 2
 	write(1, "\033[1;32mMINE : \033[0m", 18);
-	ret = ft_write(1, "", 1);
-	printf(" | ret = %d", ret);
-	printf(" | errno = %d\n", errno);
-
-	write(1, "\033[1;31mREAL : \033[0m", 18);
-	ret = write(1, "", 1);
-	printf(" | ret = %d", ret);
-	printf(" | errno = %d\n", errno);
-
-	// ft_write test 3
-	write(1, "\033[1;32mMINE : \033[0m", 18);
 	ret = ft_write(1, NULL, 1);
 	printf(" | ret = %d", ret);
 	printf(" | errno = %d\n", errno);
 
 	write(1, "\033[1;31mREAL : \033[0m", 18);
 	ret = write(1, NULL, 1);
+	printf(" | ret = %d", ret);
+	printf(" | errno = %d\n", errno);
+
+	// ft_write test 3
+	write(1, "\033[1;32mMINE : \033[0m", 18);
+	ret = ft_write(1, "", 1);
+	printf(" | ret = %d", ret);
+	printf(" | errno = %d\n", errno);
+
+	write(1, "\033[1;31mREAL : \033[0m", 18);
+	ret = write(1, "", 1);
 	printf(" | ret = %d", ret);
 	printf(" | errno = %d\n", errno);
 
@@ -150,7 +150,21 @@ int main(void)
 
 	write(1, "\033[1;31mREAL : \033[0m", 18);
 	str = strcpy(str1, str2);
-	printf("%s", str1);
+	printf("%s", str);
+	printf(" | errno = %d\n", errno);
+
+	// ft_strcpy test 2
+	str = malloc(sizeof(char) * 20);
+	str2 = "Hello, world!";
+
+	write(1, "\033[1;32mMINE : \033[0m", 18);
+	str = ft_strcpy(str1, str2);
+	printf("%s", str);
+	printf(" | errno = %d\n", errno);
+
+	write(1, "\033[1;31mREAL : \033[0m", 18);
+	str = strcpy(str1, str2);
+	printf("%s", str);
 	printf(" | errno = %d\n", errno);
 
 	return (EXIT_SUCCESS);

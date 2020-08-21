@@ -5,6 +5,7 @@
 				section 	.text
 ft_strcpy:
 				mov			rax, rdi; return value is 1st argument (destination)
+				call 		_copy
 
 _copy:
 				mov byte 	dl, [rsi]; copy byte at rsi address in a byte size register
