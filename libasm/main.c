@@ -6,7 +6,7 @@
 /*   By: jonny <josaykos@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 14:46:13 by jonny             #+#    #+#             */
-/*   Updated: 2020/08/21 15:46:37 by jonny            ###   ########.fr       */
+/*   Updated: 2020/08/21 15:49:42 by jonny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int main(void)
 
 	// ft_read test 1 - static buffer
 	write(1, "\033[1;32mMINE : \033[0m", 18);
-	fd = open("testfiles/text-01.txt", O_RDONLY);
+	fd = open("Makefile", O_RDONLY);
 	ret = ft_read(fd, buf, 20);
 	close(fd);
 	printf("%s", buf);
@@ -69,7 +69,7 @@ int main(void)
 	printf(" | errno = %d\n", errno);
 
 	write(1, "\033[1;31mREAL : \033[0m", 18);
-	fd = open("testfiles/text-01.txt", O_RDONLY);
+	fd = open("Makefile", O_RDONLY);
 	ret = read(fd, buf, 20);
 	printf("%s", buf);
 	close(fd);
@@ -80,7 +80,7 @@ int main(void)
 	buf_alloc = calloc(sizeof(char), 40);
 
 	write(1, "\033[1;32mMINE : \033[0m", 18);
-	fd = open("testfiles/text-01.txt", O_RDONLY);
+	fd = open("Makefile", O_RDONLY);
 	ret = ft_read(fd, buf_alloc, 40);
 	close(fd);
 	write(1, buf_alloc, 40);
@@ -88,7 +88,7 @@ int main(void)
 	printf(" | errno = %d\n", errno);
 
 	write(1, "\033[1;31mREAL : \033[0m", 18);
-	fd = open("testfiles/text-01.txt", O_RDONLY);
+	fd = open("Makefile", O_RDONLY);
 	ret = read(fd, buf_alloc, 40);
 	close(fd);
 	write(1, buf_alloc, 40);
@@ -101,7 +101,7 @@ int main(void)
 	buf_alloc = NULL;
 
 	write(1, "\033[1;32mMINE : \033[0m", 18);
-	fd = open("testfiles/text-01.txt", O_RDONLY);
+	fd = open("Makefile", O_RDONLY);
 	ret = ft_read(fd, buf_alloc, 40);
 	close(fd);
 	write(1, buf_alloc, 40);
@@ -109,7 +109,7 @@ int main(void)
 	printf(" | errno = %d\n", errno);
 
 	write(1, "\033[1;31mREAL : \033[0m", 18);
-	fd = open("testfiles/text-01.txt", O_RDONLY);
+	fd = open("Makefile", O_RDONLY);
 	ret = read(fd, buf_alloc, 40);
 	close(fd);
 	write(1, buf_alloc, 40);
