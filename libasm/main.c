@@ -6,7 +6,7 @@
 /*   By: jonny <josaykos@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 14:46:13 by jonny             #+#    #+#             */
-/*   Updated: 2020/08/21 15:49:42 by jonny            ###   ########.fr       */
+/*   Updated: 2020/08/21 18:02:48 by jonny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,6 +202,49 @@ int main(void)
 	printf(" | mem str = %p", str);
 	printf(" | errno = %d\n", errno);
 	free(str);
+
+	puts("\n----------- ft_strcmp -----------");
+
+	// ft_strcmp test 1
+	str = "Bonjour";
+	str2 = "Bonjour";
+
+	write(1, "\033[1;32mMINE : \033[0m", 18);
+	ret = ft_strcmp(str, str2);
+	printf(" | ret = %d", ret);
+	printf(" | errno = %d\n", errno);
+
+	write(1, "\033[1;31mREAL : \033[0m", 18);
+	ret = strcmp(str, str2);
+	printf(" | ret = %d", ret);
+	printf(" | errno = %d\n", errno);
+
+	// ft_strcmp test 2
+
+	str = "ok";
+	str2 = "okfewifhe";
+
+	write(1, "\033[1;32mMINE : \033[0m", 18);
+	ret = ft_strcmp(str2, str);
+	printf(" | ret = %d", ret);
+	printf(" | errno = %d\n", errno);
+
+	write(1, "\033[1;31mREAL : \033[0m", 18);
+	ret = strcmp(str2, str);
+	printf(" | ret = %d", ret);
+	printf(" | errno = %d\n", errno);
+
+	// ft_strcmp test 3
+
+	write(1, "\033[1;32mMINE : \033[0m", 18);
+	ret = ft_strcmp(str, str2);
+	printf(" | ret = %d", ret);
+	printf(" | errno = %d\n", errno);
+
+	write(1, "\033[1;31mREAL : \033[0m", 18);
+	ret = strcmp(str, str2);
+	printf(" | ret = %d", ret);
+	printf(" | errno = %d\n", errno);
 
 	return (EXIT_SUCCESS);
 }
