@@ -9,7 +9,7 @@ ft_strlen:
 				call 		_count
 
 _count:
-				cmp 		byte [rdi], 0; compare the byte rdi is pointing to with '\0'
+				cmp byte 	[rdi], 0; compare the byte rdi is pointing to with '\0'
 				je 			_return; return if equals
 				inc 		rax; increment the counter
 				inc 		rdi; increment the pointer
