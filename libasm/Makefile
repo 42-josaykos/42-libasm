@@ -6,7 +6,7 @@
 #    By: jonny <josaykos@student.42.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/12 13:27:00 by jonny             #+#    #+#              #
-#    Updated: 2020/08/21 12:50:13 by jonny            ###   ########.fr        #
+#    Updated: 2020/08/21 15:10:13 by jonny            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRCS = ft_write.s \
 			 ft_error.s \
 			 ft_strlen.s \
 			 ft_strcpy.s \
+			 ft_strdup.s \
 
 SRCS_PATH = src
 SRC = $(addprefix $(SRCS_PATH)/,$(SRCS))

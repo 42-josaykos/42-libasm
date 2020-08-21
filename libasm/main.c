@@ -6,7 +6,7 @@
 /*   By: jonny <josaykos@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 14:46:13 by jonny             #+#    #+#             */
-/*   Updated: 2020/08/21 14:40:54 by jonny            ###   ########.fr       */
+/*   Updated: 2020/08/21 15:46:37 by jonny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(void)
 	int ret;
 	char buf[20];
 	char *buf_alloc;
-	char *str = "";
+	char *str = NULL;
 	char str1[20];
 	char *str2 = "Salut";
 	int fd;
@@ -131,12 +131,12 @@ int main(void)
 
 	// ft_strlen test 2
 	write(1, "\033[1;32mMINE : \033[0m", 18);
-	ret = ft_strlen(str);
+	ret = ft_strlen("");
 	printf(" | ret = %d", ret);
 	printf(" | errno = %d\n", errno);
 
 	write(1, "\033[1;31mREAL : \033[0m", 18);
-	ret = strlen(str);
+	ret = strlen("");
 	printf(" | ret = %d", ret);
 	printf(" | errno = %d\n", errno);
 
@@ -144,13 +144,13 @@ int main(void)
 
 	// ft_strcpy test 1
 	write(1, "\033[1;32mMINE : \033[0m", 18);
-	str = ft_strcpy(str1, str2);
-	printf("%s", str);
+	ft_strcpy(str1, str2);
+	printf("%s", str1);
 	printf(" | errno = %d\n", errno);
 
 	write(1, "\033[1;31mREAL : \033[0m", 18);
-	str = strcpy(str1, str2);
-	printf("%s", str);
+	strcpy(str1, str2);
+	printf("%s", str1);
 	printf(" | errno = %d\n", errno);
 
 	// ft_strcpy test 2
@@ -158,14 +158,50 @@ int main(void)
 	str2 = "Hello, world!";
 
 	write(1, "\033[1;32mMINE : \033[0m", 18);
-	str = ft_strcpy(str1, str2);
+	ft_strcpy(str, str2);
 	printf("%s", str);
 	printf(" | errno = %d\n", errno);
 
 	write(1, "\033[1;31mREAL : \033[0m", 18);
-	str = strcpy(str1, str2);
+	strcpy(str, str2);
 	printf("%s", str);
 	printf(" | errno = %d\n", errno);
+
+	free(str);
+
+	puts("\n----------- ft_strdup -----------");
+
+	// ft_strdup test 1
+	str2 = "Asm is fun!";
+	write(1, "\033[1;32mMINE : \033[0m", 18);
+	str = ft_strdup(str2);
+	printf("%s", str);
+	printf(" | errno = %d\n", errno);
+	free(str);
+
+	write(1, "\033[1;31mREAL : \033[0m", 18);
+	str = strdup(str2);
+	printf("%s", str);
+	printf(" | errno = %d\n", errno);
+	free(str);
+
+	// ft_strdup test 2
+	str2 = "";
+	write(1, "\033[1;32mMINE : \033[0m", 18);
+	str = ft_strdup(str2);
+	printf("%s", str);
+	printf(" | mem str2 = %p", str2);
+	printf(" | mem str = %p", str);
+	printf(" | errno = %d\n", errno);
+	free(str);
+
+	write(1, "\033[1;31mREAL : \033[0m", 18);
+	str = strdup(str2);
+	printf("%s", str);
+	printf(" | mem str2 = %p", str2);
+	printf(" | mem str = %p", str);
+	printf(" | errno = %d\n", errno);
+	free(str);
 
 	return (EXIT_SUCCESS);
 }
